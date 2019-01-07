@@ -4,6 +4,6 @@ const express = require('express');
 const app = express();
 
 // listen for requests
-app.listen(process.env.port || 4000, function(){
+app.listen(process.env.PORT, process.env.IP, function(){
     console.log('now listening for requests');
 });
