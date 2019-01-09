@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 // connect to mongodb
 const url = 'mongodb://hdgknsn:lino7196@ds151864.mlab.com:51864/ninjas';
 
-mongoose.connect(url, { useNewUrlParser: true });
+mongoose.connect(url, { useCreateIndex: true, useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 
 // use body-parser middleware
