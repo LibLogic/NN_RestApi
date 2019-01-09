@@ -5,12 +5,14 @@ const mongoose = require('mongoose');
 // set up express app
 const app = express();
 
-app.use(bodyParser.json());
 // connect to mongodb
 const url = 'mongodb://hdgknsn:lino7196@ds151864.mlab.com:51864/ninjas';
 
 mongoose.connect(url, { useCreateIndex: true, useNewUrlParser: true });
 mongoose.Promise = global.Promise;
+
+//set up static files
+app.use(express.static('public'));
 
 // use body-parser middleware
 app.use(bodyParser.json());
