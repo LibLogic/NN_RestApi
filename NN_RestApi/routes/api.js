@@ -3,7 +3,6 @@ const router = express.Router();
 const Ninja = require('../models/ninja');
 
 // get a list of ninjas from the db
-
 router.get('/ninjas', function(req, res, next){
     Ninja.geoNear(
         {type: 'Point', coordinates: [parseFloat(req.query.lng), parseFloat(req.query.lat)]},

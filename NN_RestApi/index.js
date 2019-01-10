@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // connect to mongodb
-const url = 'mongodb://hdgknsn:lino7196@ds151864.mlab.com:51864/ninjas';
+const url = 'mongodb://hdgknsn:lino7196@ds153394.mlab.com:53394/ninjago';
 
 mongoose.connect(url, { useCreateIndex: true, useNewUrlParser: true });
 mongoose.Promise = global.Promise;
