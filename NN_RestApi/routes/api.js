@@ -2,18 +2,32 @@ const express = require ('express');
 const router = express.Router();
 const Ninja = require('../models/ninja');
 
+// // old function to get a list of ninjas from the db...
+////... use with mongoose v 4.8.4
+// router.get('/ninjas', function(req, res, next){
+//     Ninja.geoNear(
+//         {type: 'Point', coordinates: [parseFloat(req.query.lng), parseFloat(req.query.lat)]},
+//         {maxDistance: 100000, spherical: true}
+//     ).then(function(ninjas){
+//         res.send(ninjas);
+//     }).catch(next);
+// });
 
-
-// get a list of ninjas from the db
+// get a list of ninjas from the db... 
+//... for use with mongoose versions above 4.8.4
 router.get('/ninjas', function(req, res, next){
     Ninja.aggregate([
         {
             $geoNear: {
-                near: { type: "Point", coordinates: [parseFloat(req.query.lng), parseFloat(req.query.lat)]},
+                near:  { 
+                    type: "Point", 
+                    coordinates: [parseFloat(req.query.lng), parseFloat(req.query.lat)]
+                },
                 distanceField: "dist.calculated",
                 maxDistance: 100000,
                 includeLocs: "dist.location",
-                spherical: true
+                spherical: true,
+                key: "geometry"
             }
         }
     ]).then(function(ninjas){
