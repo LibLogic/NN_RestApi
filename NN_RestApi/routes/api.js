@@ -27,12 +27,12 @@ router.get('/ninjas', function(req, res, next){
                 maxDistance: 100000,
                 includeLocs: "dist.location",
                 spherical: true,
-                key: "geometry"
             }
         }
     ]).then(function(ninjas){
+//        console.log(ninjas);
          res.send(ninjas);
-     }).catch(next);
+     });
 });
 
 // add a new ninja to the db
