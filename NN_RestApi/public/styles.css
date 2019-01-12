@@ -68,6 +68,9 @@ span.dist{
     color: green;
     float: right;
 }
+span.name{
+    width: 12%;
+}
 span.true{
     border-radius: 10px;
     width: 10px;
