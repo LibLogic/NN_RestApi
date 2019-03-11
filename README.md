@@ -4,7 +4,7 @@
 - API application programming interface
 - Utilizes endpoints
 - Resource based urls
-- status codes 200 ok 404 not found 500 server error
+- status codes 200 = ok  -- 404 = not found -- 500 = server error
 
 ## Setup Ninja App
 #### Initialize app and install local dependencies
@@ -30,6 +30,7 @@ npm install nodemon with --save-dev
 5. Touch ./public/index.html
 6. Touch ./public/styles.css
  
+### Begin Flushing Out Files
 #### Flush out index.js
 1. Import dependencies - will need express, body-parser and mongoose
 2. Set up app object - const app = express();
@@ -48,7 +49,6 @@ npm install nodemon with --save-dev
 	- DELETE will delete a ninja
 4. Use module.export to export router
 
-
 #### Flush out ninja.js
 1. Touch ninja.js file in models folder
 2. Import dependencies - will need mongoose and mongoose.Schema
@@ -56,3 +56,4 @@ npm install nodemon with --save-dev
 4. Create a Ninja model using mongoose.model() method
 5. Use module.export to export the Ninja model
 
+#### Flush out index.html & style.css
