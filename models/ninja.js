@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+
 //create geo schema
 const GeoSchema = new Schema({
   type: {

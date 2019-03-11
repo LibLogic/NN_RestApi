@@ -14,7 +14,7 @@ router.get('/ninjas', function(req, res, next){
     }
   ]).then(function(ninjas){
       res.send(ninjas);
-    });
+    }).catch(next);
 });
 
 // add a new ninja to the db
